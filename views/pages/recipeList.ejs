@@ -1,6 +1,41 @@
 
 <%- include('../partials/header') %>
 
-<h1>Recipe List Page</h1>
+<section class="recipe-list">
+
+    <h1>Recipe List</h1>
+
+    <section class="filter-section">
+        <label for="protein-filter">Filter:</label>
+        <select id="protein-filter" name="protein">
+            <option value="">All</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Fish">Fish</option>
+            <option value="Vegetarians">Vegetarian</option>
+            </select>
+    </section>
+
+    <section class="recipe-table-section">
+        <table class="recipe-table">
+            <thead>
+                <tr>
+                    <th>Recipe Name</th>
+                    <th>Protein Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hello</td>
+                    <td>There</td>
+                </tr>
+                <tr>
+                    <td>Hello</td>
+                    <td>There</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</section>
 
 <%- include('../partials/footer') %>
