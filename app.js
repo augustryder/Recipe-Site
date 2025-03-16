@@ -22,10 +22,7 @@ async function testConnection() {
 }
 testConnection()
 
-// Routes (will be moved to routes/recipeRoutes.js later)
-app.get('/', (req, res) => {
-    res.render('home'); // Render the home.ejs template
-});
+app.use('/', require('./routes/recipeRoutes')); // Use the routes
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
