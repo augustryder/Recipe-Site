@@ -8,10 +8,10 @@
     <section class="filter-section">
         <label for="protein-filter">Filter:</label>
         <select id="protein-filter" name="protein">
-            <option value="">All</option>
+            <option value="All">All</option>
             <option value="Chicken">Chicken</option>
             <option value="Fish">Fish</option>
-            <option value="Vegetarians">Vegetarian</option>
+            <option value="Vegetarian">Vegetarian</option>
             </select>
     </section>
 
@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 <% recipes.forEach(recipe => { %>
-                    <tr>
+                    <tr class="recipe-row" data-protein="<%= recipe.protein_type %>">
                         <td><a href="/recipe/:<%= recipe.recipe_id %>"><%= recipe.recipe_name %></a></td>
                         <td><%= recipe.protein_type %></td>
                         <td><%= recipe.time_required %></td>

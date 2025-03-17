@@ -61,31 +61,31 @@ INSERT INTO recipes (recipe_name, protein_type, time_required, overview, instruc
     ('Beer-Battered Fish', 'Fish', 30, 
     'Awesome BEER fish. Truly delectable.',
                                     '
-                                    1. Gather ingredients.; 
-                                    2. Heat oil in a deep fryer to 365 degrees F (185 degrees C). Rinse cod fillets, pat dry, and season with salt and pepper.;
-                                    3.  Mix flour, garlic powder, paprika, salt, and pepper in a large bowl; add egg and stir well to combine. Gradually mix in enough beer to make a thin batter.;
-                                    4. Dip cod fillets into the batter to coat. Carefully lower fillets, one at a time, into the hot oil.;
-                                    5. Fry several fillets at a time, turning once, until cooked through and golden brown, about 2 minutes per side.;
-                                    6. Drain on paper towels. Repeat to cook remaining fillets. Serve warm.
+                                    Gather ingredients.; 
+                                    Heat oil in a deep fryer to 365 degrees F (185 degrees C). Rinse cod fillets, pat dry, and season with salt and pepper.;
+                                    Mix flour, garlic powder, paprika, salt, and pepper in a large bowl; add egg and stir well to combine. Gradually mix in enough beer to make a thin batter.;
+                                    Dip cod fillets into the batter to coat. Carefully lower fillets, one at a time, into the hot oil.;
+                                    Fry several fillets at a time, turning once, until cooked through and golden brown, about 2 minutes per side.;
+                                    Drain on paper towels. Repeat to cook remaining fillets. Serve warm.
                                     '),
     ('Oven-Fried Chicken', 'Chicken', 75, 
     'A simple classic! God Bless!.', 
                                     '
-                                    1. Gather ingredients.;
-                                    2. Preheat oven to 350 degrees F (175 degrees C).;
-                                    3. Place flour in a shallow plate or bowl and season with salt and pepper to taste. Put bread crumbs in another shallow plate or bowl and beat eggs in another bowl.;
-                                    4. Dredge chicken piece by piece in the flour, then the egg, then the bread crumbs, until all pieces are coated.;
-                                    5. Pour oil into a large baking dish; add the breaded chicken thighs and sprinkle with paprika to taste.;
-                                    6. Bake in the preheated oven for 30 minutes, then turn pieces over and bake for another 30 minutes. Remove from the oven and drain on paper towels.
+                                    Gather ingredients.;
+                                    Preheat oven to 350 degrees F (175 degrees C).;
+                                    Place flour in a shallow plate or bowl and season with salt and pepper to taste. Put bread crumbs in another shallow plate or bowl and beat eggs in another bowl.;
+                                    Dredge chicken piece by piece in the flour, then the egg, then the bread crumbs, until all pieces are coated.;
+                                    Pour oil into a large baking dish; add the breaded chicken thighs and sprinkle with paprika to taste.;
+                                    Bake in the preheated oven for 30 minutes, then turn pieces over and bake for another 30 minutes. Remove from the oven and drain on paper towels.
                                     '),
     ('Acai Bowl', 'Vegetarian', 5, 
     'For you vegetarian scum out there! Just kidding, I love you all.', 
                                     '      
-                                    1. Gather ingredients.;
-                                    2. Slightly thaw the frozen acai puree, either by soaking it in warm water for a few minutes or placing it in the refrigerator overnight.;
-                                    3. Add acai, your liquid of choice, banana, and any other fruits to a high-speed blender.;;
-                                    4. Blend until all the frozen chunks are gone and the mixture is thick and smooth.;
-                                    5. Spoon the mixture into a bowl, top with your desired toppings, and serve immediately.
+                                    Gather ingredients.;
+                                    Slightly thaw the frozen acai puree, either by soaking it in warm water for a few minutes or placing it in the refrigerator overnight.;
+                                    Add acai, your liquid of choice, banana, and any other fruits to a high-speed blender.;
+                                    Blend until all the frozen chunks are gone and the mixture is thick and smooth.;
+                                    Spoon the mixture into a bowl, top with your desired toppings, and serve immediately.
                                     ');
 
 -- Insert relationships in recipe_ingredients

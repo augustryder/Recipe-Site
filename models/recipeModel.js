@@ -49,9 +49,9 @@ async function getIngredients(recipe_id) {
         const connection = await pool.getConnection();
         const [rows] = await connection.query('SELECT * FROM recipe_ingredients WHERE recipe_id = ?', recipe_id);
         let ingredients = [];
-        for (row in rows) {
+        for (const row of rows) {
             const [ingredient] = await connection.query('SELECT * FROM ingredients WHERE ingredient_id = ?', row.ingredient_id);
-            ingredients.push(ingredient);
+            ingredients.push(ingredient[0]);
         }
         connection.release();
         return ingredients;

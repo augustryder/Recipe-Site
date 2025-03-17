@@ -8,20 +8,7 @@ app.set('view engine', 'ejs');
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
-// app.use(express.urlencoded({ extended: true })); // Parse form data (important later)
-
-const pool = require('./models/recipeModel').pool; // Import the pool
-
-async function testConnection() {
-    try {
-        const connection = await pool.getConnection();
-        console.log('Database connection successful!');
-        connection.release(); // Release the connection back to the pool
-    } catch (err) {
-        console.error('Database connection failed:', err);
-    }   
-}
-testConnection()
+// app.use(express.urlencoded({ extended: true })); // Parse form data
 
 app.use('/', require('./routes/recipeRoutes')); // Use the routes
 
