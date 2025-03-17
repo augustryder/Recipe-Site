@@ -2,20 +2,17 @@
 <%- include('../partials/header') %>
 
 <section class="recipe-page">
-    <h1><%= recipe.name %></h1>
-    <section class="recipe-image">
-        <img src="<%= recipe.image %>" alt="<%= recipe.name %>">
-    </section>
+    <h1><%= recipe.recipe_name %></h1>
     <section class="recipe-details">
         <h2>Ingredients</h2>
         <ul>
-            <% recipe.ingredients.forEach(ingredient => { %>
-                <li><%= ingredient %></li>
+            <% ingredients.forEach(ingredient => { %>
+                <li><%= ingredient.ingredient_name %></li>
             <% }) %>
         </ul>
         <h2>Instructions</h2>
         <ol>
-            <% recipe.instructions.forEach(instruction => { %>
+            <% recipe.instructions.split(';').forEach(instruction => { %>
                 <li><%= instruction %></li>
             <% }) %>
         </ol>

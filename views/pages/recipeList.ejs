@@ -21,17 +21,19 @@
                 <tr>
                     <th>Recipe Name</th>
                     <th>Protein Type</th>
+                    <th>Time</th>
+                    <th>Description</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Hello</td>
-                    <td>There</td>
-                </tr>
-                <tr>
-                    <td>Hello</td>
-                    <td>There</td>
-                </tr>
+                <% recipes.forEach(recipe => { %>
+                    <tr>
+                        <td><a href="/recipe/:<%= recipe.recipe_id %>"><%= recipe.recipe_name %></a></td>
+                        <td><%= recipe.protein_type %></td>
+                        <td><%= recipe.time_required %></td>
+                        <td><%= recipe.overview %></td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </section>

@@ -10,7 +10,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 // app.use(express.urlencoded({ extended: true })); // Parse form data (important later)
 
-const pool = require('./models/recipeModel'); // Import the pool
+const pool = require('./models/recipeModel').pool; // Import the pool
+
 async function testConnection() {
     try {
         const connection = await pool.getConnection();
@@ -18,7 +19,7 @@ async function testConnection() {
         connection.release(); // Release the connection back to the pool
     } catch (err) {
         console.error('Database connection failed:', err);
-    }
+    }   
 }
 testConnection()
 

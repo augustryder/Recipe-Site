@@ -16,6 +16,8 @@ CREATE TABLE IF NOT EXISTS recipes (
     recipe_id INT PRIMARY KEY AUTO_INCREMENT,
     recipe_name VARCHAR(255) NOT NULL,
     protein_type VARCHAR(255) NOT NULL,
+    time_required INT,
+    overview TEXT,
     instructions TEXT
 );
 
@@ -55,8 +57,10 @@ INSERT INTO ingredients (ingredient_name, hover_text) VALUES
     ('Almond milk', 'Almond milk is a plant-based alternative to dairy milk.'); -- 21
 
 -- Insert initial recipes
-INSERT INTO recipes (recipe_name, protein_type, instructions) VALUES
-    ('Beer-Battered Fish', 'Fish', '
+INSERT INTO recipes (recipe_name, protein_type, time_required, overview, instructions) VALUES
+    ('Beer-Battered Fish', 'Fish', 30, 
+    'Awesome BEER fish. Truly delectable.',
+                                    '
                                     1. Gather ingredients.; 
                                     2. Heat oil in a deep fryer to 365 degrees F (185 degrees C). Rinse cod fillets, pat dry, and season with salt and pepper.;
                                     3.  Mix flour, garlic powder, paprika, salt, and pepper in a large bowl; add egg and stir well to combine. Gradually mix in enough beer to make a thin batter.;
@@ -64,7 +68,9 @@ INSERT INTO recipes (recipe_name, protein_type, instructions) VALUES
                                     5. Fry several fillets at a time, turning once, until cooked through and golden brown, about 2 minutes per side.;
                                     6. Drain on paper towels. Repeat to cook remaining fillets. Serve warm.
                                     '),
-    ('Oven-Fried Chicken', 'Chicken', '
+    ('Oven-Fried Chicken', 'Chicken', 75, 
+    'A simple classic! God Bless!.', 
+                                    '
                                     1. Gather ingredients.;
                                     2. Preheat oven to 350 degrees F (175 degrees C).;
                                     3. Place flour in a shallow plate or bowl and season with salt and pepper to taste. Put bread crumbs in another shallow plate or bowl and beat eggs in another bowl.;
@@ -72,7 +78,9 @@ INSERT INTO recipes (recipe_name, protein_type, instructions) VALUES
                                     5. Pour oil into a large baking dish; add the breaded chicken thighs and sprinkle with paprika to taste.;
                                     6. Bake in the preheated oven for 30 minutes, then turn pieces over and bake for another 30 minutes. Remove from the oven and drain on paper towels.
                                     '),
-    ('Acai Bowl', 'Vegetarian', '
+    ('Acai Bowl', 'Vegetarian', 5, 
+    'For you vegetarian scum out there! Just kidding, I love you all.', 
+                                    '      
                                     1. Gather ingredients.;
                                     2. Slightly thaw the frozen acai puree, either by soaking it in warm water for a few minutes or placing it in the refrigerator overnight.;
                                     3. Add acai, your liquid of choice, banana, and any other fruits to a high-speed blender.;;
