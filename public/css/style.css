@@ -1,0 +1,124 @@
+
+header {
+    background-color: #ff1f1f;
+    padding: 20px;
+    text-align: center; 
+    border-bottom: 1px solid #99ff24;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav a {
+    color: #333; /* Dark gray text for links */
+    padding: 5px 10px;
+    display: inline-block; /* Allows for padding */
+}
+
+header nav a:hover {
+    background-color: #ff08ea; /* Light gray background on hover */
+}
+
+footer {
+    background-color: #28e6ff;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #16ff40;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+main {
+    padding: 20px;
+    min-height: 70vh;
+}
+
+/* Home */
+.home {
+    display: flex;
+}
+
+.home-image {
+    width: 50%;
+    padding: 20px;
+}
+
+.home-text {
+    width: 50%;
+    padding: 20px;
+}
+
+.home-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+ 
+/* Recipe List */
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.recipe-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recipe-table th,
+.recipe-table td {
+    border: 1px solid #6d70ff;
+    padding: 8px;
+    text-align: left;
+}
+
+.recipe-table th {
+    background-color: #ffd83e;
+}
+
+/* Recipe Page */
+.ingredient {
+    position: relative;
+    cursor: pointer;
+}
+
+.ingredient[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    background-color: rgba(173, 225, 246, 0.8);
+    color: rgba(0, 0, 0, 0.844);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+/* Add Recipe */
+form div {
+    margin-bottom: 10px; 
+}
+
+
+form input[type="text"],
+form select,
+form textarea {
+    width: 100%; /* Make input fields fill their container */
+    padding: 8px;
+    border: 1px solid #0fc3ff;
+    box-sizing: border-box;
+}
+
+form button[type="submit"] {
+    background-color: #f869ff; /* Green button */
+    color: rgb(30, 255, 22);
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+

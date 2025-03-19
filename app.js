@@ -8,7 +8,7 @@ app.set('view engine', 'ejs');
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
-// app.use(express.urlencoded({ extended: true })); // Parse form data
+app.use(express.urlencoded({ extended: true })); // Parse form data
 
 app.use('/', require('./routes/recipeRoutes')); // Use the routes
 

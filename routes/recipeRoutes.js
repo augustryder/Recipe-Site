@@ -19,8 +19,23 @@ router.get('/recipe/:id', async (req, res) => {
     res.render('pages/recipe', {recipe: recipe, ingredients: ingredients});
 });
 
-router.get('/add-recipe', (req, res) => {
-    res.render('pages/addRecipe');
+router.get('/add-recipe', async (req, res) => {
+    const ingredients = await model.getAllIngredients();
+    res.render('pages/addRecipe', { ingredients: ingredients });
+});
+
+router.post('/add-recipe', async (req, res) => {
+    try {
+        const { name, proteinType, time, overview, instructions, ingredients } = req.body;
+        const ingredientIds = Array.isArray(ingredients) ? ingredients : [ingredients];
+
+        await model.addRecipe(name, proteinType, time, overview, instructions, ingredientIds);
+        res.redirect('/recipes');
+
+    } catch (err) {
+        console.error(err);
+        throw err;
+    }
 });
 
 module.exports = router;

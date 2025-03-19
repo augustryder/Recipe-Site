@@ -86,7 +86,9 @@ INSERT INTO recipes (recipe_name, protein_type, time_required, overview, instruc
                                     Add acai, your liquid of choice, banana, and any other fruits to a high-speed blender.;
                                     Blend until all the frozen chunks are gone and the mixture is thick and smooth.;
                                     Spoon the mixture into a bowl, top with your desired toppings, and serve immediately.
-                                    ');
+                                    '),
+    ('The Boss', 'Fish', 1,
+    'For real men.', 'You know what to do.');
 
 -- Insert relationships in recipe_ingredients
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, quantity) VALUES
@@ -114,4 +116,6 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, quantity) VALUES
     (3, 5, 'to taste'),
     (3, 6, 'to taste'),
     (3, 7, 'to taste'),
-    (3, 8, 'to taste');
+    (3, 8, 'to taste'),
+    (4, 17, '1 piece'),
+    (4, 8, 'to taste');

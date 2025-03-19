@@ -61,7 +61,50 @@ async function getIngredients(recipe_id) {
     }
 }
 
+async function getAllIngredients() {
+    try {
+        const connection = await pool.getConnection();
+        const [rows] = await connection.query('SELECT * FROM ingredients');
+        connection.release();
+        return rows;
+    } catch (err) {
+        console.error(err);
+        throw err;
+    }
+}
+
+async function addRecipe(name, proteinType, time, overview, instructions, ingredientIds) {
+    const connection = await pool.getConnection();
+    try {
+        await connection.beginTransaction();
+
+        const [recipeResult] = await connection.query(
+            'INSERT INTO recipes (recipe_name, protein_type, time_required, overview, instructions) VALUES (?, ?, ?, ?, ?)',
+            [name, proteinType, Number(time), overview, instructions]
+        );
+        const recipeId = recipeResult.insertId;
+
+        for (const ingredientId of ingredientIds) {
+            await connection.query(
+                'INSERT INTO recipe_ingredients (recipe_id, ingredient_id, quantity) VALUES (?, ?, "to taste")', 
+                [recipeId, Number(ingredientId)]
+            );
+        }
+
+        await connection.commit();
+        return recipeId;
+    } catch (err) {
+        console.error(err);
+        await connection.rollback();
+        throw err;
+    } finally {
+        connection.release();
+    }
+}
+
 exports.pool = pool;
 exports.getRecipes = getRecipes;
 exports.getRecipe = getRecipe;
 exports.getIngredients = getIngredients;
+exports.getAllIngredients = getAllIngredients;
+exports.addRecipe = addRecipe;

@@ -2,31 +2,53 @@
 <%- include('../partials/header') %>
 
 <section class="add-recipe">
+
     <h1>Add Recipe</h1>
 
-    <form action="/add-recipe" method="POST" enctype="multipart/form-data">
+    <form action="/add-recipe" method="POST" enctype="application/x-www-form-urlencoded">
 
-        <label for="name">Recipe Name:</label>
-        <input type="text" id="name" name="name" required>
+        <div>
+            <label for="name">Recipe Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
 
-        <label for="protein">Protein Type:</label>
-        <select id="protein" name="protein" required>
-            <option value="">Select Protein Type</option>
-            <option value="Chicken">Chicken</option>
-            <option value="Fish">Fish</option>
-            <option value="Vegetarian">Vegetarian</option>
-        </select>
+        <div>
+            <label for="proteinType">Protein Type:</label>
+            <select id="proteinType" name="proteinType" required>
+                <option value="Chicken">Chicken</option>
+                <option value="Fish">Fish</option>
+                <option value="Vegetarian">Vegetarian</option>
+            </select>
+        </div>
 
-        <label for="image">Image:</label>
-        <input type="file" id="image" name="image" required>
+        <div>
+            <label for="time">Time Required:</label>
+            <input type="number" id="time" name="time" required>
+        </div>
 
-        <label for="ingredients">Ingredients:</label>
-        <textarea id="ingredients" name="ingredients" required></textarea>
+        <div>
+            <label for="overview">Overview:</label>
+            <textarea id="overview" name="overview" required></textarea>
+        </div>
 
-        <label for="instructions">Instructions:</label>
-        <textarea id="instructions" name="instructions" required></textarea>
+        <div>
+            <label>Ingredients:</label>
+            <% ingredients.forEach(ingredient => { %>
+                <div>
+                    <input type="checkbox" id="ingredient-<%= ingredient.ingredient_id %>" name="ingredients" value="<%= ingredient.ingredient_id %>">
+                    <label for="ingredient-<%= ingredient.ingredient_id %>"><%= ingredient.ingredient_name %></label>
+                </div>
+            <% }); %>
+        </div>
 
-        <button type="submit">Add Recipe</button>
+        <div>
+            <label for="instructions">Instructions:</label>
+            <textarea id="instructions" name="instructions" required></textarea>
+        </div>
+
+        <div>
+            <button type="submit">Add Recipe</button>
+        </div>
 
     </form>
 </section>

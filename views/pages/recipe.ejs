@@ -7,7 +7,7 @@
         <h2>Ingredients</h2>
         <ul>
             <% ingredients.forEach(ingredient => { %>
-                <li><%= ingredient.ingredient_name %></li>
+                <li class="ingredient" title="<%= ingredient.hover_text %>"><%= ingredient.ingredient_name %></li>
             <% }) %>
         </ul>
         <h2>Instructions</h2>
